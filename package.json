@@ -1,0 +1,36 @@
+{
+  "name": "root",
+  "private": true,
+  "version": "1.0.0",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start:server": "cd packages/server && npm run start",
+    "build:server": "cd packages/server && npm run build",
+    "lint": "lerna run lint",
+    "build":"npm run build:server",
+    "typecheck": "lerna run typecheck",
+    "prettier":"lerna run prettier",
+    "prepare": "husky install",
+    "heroku-postbuild": "cd packages/server && npm install && npm run build"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "15.0.0",
+    "@commitlint/config-conventional": "15.0.0",
+    "@typescript-eslint/eslint-plugin": "5.5.0",
+    "@typescript-eslint/parser": "5.5.0",
+    "eslint": "7.32.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-import": "2.25.3",
+    "eslint-plugin-prettier": "4.0.0",
+    "husky": "7.0.4",
+    "lerna": "4.0.0",
+    "lint-staged": "12.1.2",
+    "prettier": "2.5.1",
+    "rimraf": "3.0.2",
+    "typescript": "4.5.2"
+  },
+  "dependencies": {}
+}
